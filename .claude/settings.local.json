@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rsvg-convert:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

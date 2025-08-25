@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>おいちょかぶ</title>
+    
+    <!-- PWA メタタグ -->
+    <meta name="description" content="ブラウザで楽しめる日本の伝統的なカードゲーム「おいちょかぶ」">
+    <meta name="theme-color" content="#764ba2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="おいちょかぶ">
+    
+    <!-- アイコン -->
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+    
+    <!-- マニフェスト -->
+    <link rel="manifest" href="manifest.json">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -51,5 +67,19 @@
     </div>
     
     <script src="game.js"></script>
+    <script>
+        // Service Worker の登録
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful:', registration.scope);
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed:', err);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
