@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おいちょかぶ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>おいちょかぶ</h1>
+        
+        <div class="game-area">
+            <div class="dealer-section">
+                <h2>親の手札</h2>
+                <div class="cards" id="dealer-cards"></div>
+                <div class="score" id="dealer-score">得点: -</div>
+            </div>
+            
+            <div class="player-section">
+                <h2>あなたの手札</h2>
+                <div class="cards" id="player-cards"></div>
+                <div class="score" id="player-score">得点: -</div>
+            </div>
+            
+            <div class="controls">
+                <button id="hit-btn" class="btn" disabled>もう一枚引く</button>
+                <button id="stand-btn" class="btn" disabled>勝負する</button>
+                <button id="new-game-btn" class="btn">新しいゲーム</button>
+            </div>
+            
+            <div class="result" id="result"></div>
+            
+            <div class="bet-section">
+                <label for="bet-amount">賭け金:</label>
+                <input type="number" id="bet-amount" min="10" max="1000" step="10" value="100">
+                <span class="chips">所持金: <span id="chips">1000</span></span>
+            </div>
+        </div>
+        
+        <div class="rules">
+            <h3>ルール説明</h3>
+            <ul>
+                <li>2枚のカードの合計の下1桁で勝負します</li>
+                <li>9（かぶ）が最強です</li>
+                <li>もう一枚引いて3枚で勝負することもできます</li>
+                <li>親より高い数字で勝ちです</li>
+                <li>特殊役：アラシ（3枚同じ数字）、シッピン（4と1）など</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
